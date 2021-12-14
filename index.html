@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1200px;
+  position: bottom;
+  margin: auto;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 30.33%;
+}
+.column1 {
+  float: left;
+  width: auto;
+      margin-top: 165px;
+    margin-left: 3px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+ 
+</style>
+</head>
+<body style="background-color:black;">
+
+<div class="slideshow-container">
+<div class="row">
+<div class="column1" >
+<a   onclick="showSlides(false)"><img src ="40_40_left_wb.PNG"> </a>
+ </div>
+  <div class="column">
+    <img id ="im1"    style="width:100%">
+  </div>
+  <div class="column">
+    <img  id ="im2" style="width:100%">
+  </div>
+  <div class="column">
+    <img id ="im3"  style="width:100%">
+  </div> 
+  <div class="column1">
+  <a   onclick="showSlides(true)"><img src ="40_40_right_wb.PNG"> </a>
+  </div>
+</div>
+
+  
+</div>
+<script>
+var ironman_01 = new Image();
+ironman_01.src = 'ironman-01.jpg';
+var ironman_02 = new Image();
+ironman_02.src = 'ironman-02.jpg';
+var ironman_03 = new Image();
+ironman_03.src = 'ironman-03.jpg';
+var ironman_04 = new Image();
+ironman_04.src = 'ironman-04.jpg';
+var ironman_05 = new Image();
+ironman_05.src = 'ironman-05.jpg';
+var imagarr=[ironman_01,ironman_02,ironman_03,ironman_04,ironman_05]
+document.getElementById("im1").src=imagarr[0].src;
+document.getElementById("im2").src=imagarr[1].src;
+document.getElementById("im3").src=imagarr[2].src;
+function showSlides(n) {
+ arrayRotate(imagarr,n);
+document.getElementById("im1").src=imagarr[0].src;
+document.getElementById("im2").src=imagarr[1].src;
+document.getElementById("im3").src=imagarr[2].src; 
+}
+function arrayRotate(arr, reverse) {
+  if (reverse) arr.unshift(arr.pop());
+  else arr.push(arr.shift());
+  return arr;
+}
+</script>
+
+</body>
+</html> 
